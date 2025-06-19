@@ -1,0 +1,81 @@
+---
+title: "Hakkımızda"
+layout: default
+permalink: "/hakkimizda"
+comments: false
+---
+
+<div class="container">
+    <!-- Sayfa başlığı -->
+    <h4 class="font-weight-bold spanborder text-center">
+        <span>{{ page.title }}</span>
+    </h4>
+    
+    <!-- Hakkımızda Metni -->
+    <div class="about-us-introduction mt-4 mb-4">
+        <p>Nexusvis, 2025 yılında kuruldu ve hızla gelişen sektörümüzde güçlü bir yer edinmeye başladı. Ekibimiz, sektörde uzun yıllar boyunca kazandığı deneyimle, farklı alanlardaki uzmanlıkları bir araya getirerek büyük bir sinerji oluşturuyor. Aslında, bizim için "yeni" olmak, sadece yeni bir araya gelmemiz anlamına geliyor; çünkü ekibimiz, her biri alanında yıllarca deneyim kazanmış profesyonellerden oluşuyor.</p>
+        <p>Nexusvis olarak, müşterilerimize en yenilikçi ve kaliteli hizmeti sunmayı hedefliyoruz. Sadece yeni bir ekip değil, güçlü bir geçmişe sahip, farklı bakış açılarına ve çözümlere sahip bir ekip olarak, sektörümüzdeki değişimlere hızla adapte olabiliyoruz. Bu sayede, müşterilerimizin ihtiyaçlarına özel çözümler üretirken, onlara değer katmayı amaçlıyoruz.</p>
+        <p>Vizyonumuz, sektördeki lider firmalarla aynı seviyede, hatta onları geride bırakacak yenilikçi ve sürdürülebilir çözümler geliştirmektir. Güçlü işbirliklerimiz ve sağlam temellerimizle, sektördeki en yüksek standartları yakalayarak müşteri memnuniyetini her zaman ön planda tutuyoruz.</p>
+    </div>
+
+    <!-- Ekip Başlığı -->
+    <h4 class="font-weight-bold spanborder text-center">
+        <span>Ekip</span>
+    </h4>
+    
+    <!-- Ekip Üyeleri -->
+    <div class="row gap-y listrecent listauthor">
+        {% for member in site.team %}
+            <div class="col-lg-3 mb-5">
+                <div class="p-4 border rounded team-member-card">
+                    <a href="{{ member.url }}" class="d-block text-center">
+                        <!-- Üye görseli -->
+                        <div class="team-member-img">
+                            <img alt="{{ member.title }}" src="{{ site.baseurl }}{{ member.image }}" class="rounded-circle img-fluid">
+                        </div>
+                        <!-- Üye adı -->
+                        <h5 class="text-dark mb-0">{{ member.title }}</h5>
+                    </a>
+                    <!-- Sosyal Medya İkonları -->
+                    <div class="icon-block mt-3 d-flex justify-content-center">
+                        <div>
+                            {% if member.twitter %}
+                            <a target="_blank" href="{{ member.twitter }}"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a> &nbsp;
+                            {% endif %}
+                            {% if member.facebook %}
+                            <a target="_blank" href="{{ member.facebook }}"><i class="fab fa-facebook text-muted" aria-hidden="true"></i></a> &nbsp;
+                            {% endif %}
+                            {% if member.youtube %}
+                            <a target="_blank" href="{{ member.youtube }}"><i class="fab fa-youtube text-muted" aria-hidden="true"></i></a> &nbsp;
+                            {% endif %}
+                            {% if member.instagram %}
+                            <a target="_blank" href="{{ member.instagram }}"><i class="fab fa-instagram text-muted" aria-hidden="true"></i></a> &nbsp;
+                            {% endif %}
+                            {% if member.site %}
+                            <a target="_blank" href="{{ member.site }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!-- Üye Pozisyonu -->
+                    <div class="card-overlay">
+                        <p>{{ member.position }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<style>footer {
+    position: fixed;  /* Footer'ı sayfada sabitler */
+    bottom: 0;         /* Sayfanın alt kısmına yerleştirir */
+    left: 0;           /* Sol kenara hizalar */
+    width: 100%;       /* Genişliği ekranın tamamını kaplar */
+    z-index: 999;      /* Diğer içeriklerin üstünde görünmesini sağlar */
+    background-color: #fff; /* Arka plan rengini beyaz yapar */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Gölgelendirme ekler (isteğe bağlı) */
+}
+
+/* Sayfanın içeriğinin footer'a çarpmasını engellemek için padding ekleyin */
+body {
+    padding-bottom: 60px; /* Footer yüksekliği kadar alt padding ekler */
+}</style>

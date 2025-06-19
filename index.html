@@ -1,0 +1,259 @@
+---
+title: "Ana Sayfa"
+layout: default
+pagination:
+enabled: true
+description: "Eksilmez Plastik"
+---
+
+<div class="container">
+
+    {% if page.url == "/" %}
+
+    <!-- slider -->
+    {% include slider.html %}
+    <hr>
+
+    <!-- Animasyonlu Sayaçlar -->
+    <div class="counter-container">
+        <div class="counter-box">
+            <span class="counter" id="customer-counter">0</span>
+            <p>Aktif Müşteri</p>
+        </div>
+        <div class="counter-box">
+            <span class="counter" id="project-counter">0</span>
+            <p>Tamamlanan Proje</p>
+        </div>
+        <div class="counter-box">
+            <span class="counter" id="team-counter">0</span>
+            <p>Ekibimiz</p>
+        </div>
+        <div class="counter-box">
+            <span class="counter" id="years-counter">0</span>
+            <p>Yıllık Tecrübe</p>
+        </div>
+    </div>
+
+    <h4 class="font-weight-bold spanborder"><span>Yeni Ürünler</span></h4>
+{% assign bookarray = "" | split: ',' %}
+{% assign sortedarray = "" | split: ',' %}
+    {% for book in site.books %}
+        {% assign bookarray = bookarray | push: book %}
+    {% endfor %}
+    {% assign sortedarray = bookarray | sort: 'date' %}
+
+{% for book in sortedarray limit:10 %}
+    {% assign bookarray = bookarray | push: book %}
+{% endfor %}
+
+{% assign books = bookarray %}
+{% include product-slider.html %}
+ 
+
+
+
+
+
+<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
+    <div class="container">
+        <h4 class="section-title mt-4 mb-3"><span>Yaptığımız İşler</span></h4>
+        <div class="row">
+            <!-- Web Tasarım Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-laptop-code fa-2x mb-3" style="color: #007bff;"></i>
+                        <h5 class="card-title">Web Tasarım</h5>
+                        <p class="card-text">Modern ve kullanıcı dostu web siteleri tasarlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Grafik Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-video fa-2x mb-3" style="color: #28a745;"></i>
+                        <h5 class="card-title">Vİdeo Grafİk</h5>
+                        <p class="card-text">Etkileyici video animasyonları ve grafiklerle markanızı görsel bir şölene
+                            dönüştürüyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Görsel Grafik Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-paint-brush fa-2x mb-3" style="color: #ffc107;"></i>
+                        <h5 class="card-title">Görsel Grafİk</h5>
+                        <p class="card-text">Yaratıcı görseller ve grafiklerle markanızın görsel kimliğini
+                            güçlendiriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sosyal Medya Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-share-alt fa-2x mb-3" style="color: #17a2b8;"></i>
+                        <h5 class="card-title">Sosyal Medya</h5>
+                        <p class="card-text">Sosyal medya stratejileri ile markanızı hedef kitlenizle buluşturuyoruz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartvizit Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-id-card fa-2x mb-3" style="color: #6610f2;"></i>
+                        <h5 class="card-title">Kartvİzİt</h5>
+                        <p class="card-text">Özel tasarım kartvizitler ile profesyonelliğinizi bir adım öne taşıyın.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Davetiye Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-gift fa-2x mb-3" style="color: #e83e8c;"></i>
+                        <h5 class="card-title">Davetİye</h5>
+                        <p class="card-text">Özel günleriniz için yaratıcı ve şık davetiye tasarımları sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google SEO Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-search fa-2x mb-3" style="color: #28a745;"></i>
+                        <h5 class="card-title">Google SEO</h5>
+                        <p class="card-text">Web sitenizin görünürlüğünü artırmak için SEO stratejileri geliştiriyoruz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İngilizce Çeviri Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-language fa-2x mb-3" style="color: #007bff;"></i>
+                        <h5 class="card-title">İngilizce Çeviri</h5>
+                        <p class="card-text">Türkçe'den İngilizce'ye ve İngilizce'den Türkçe'ye doğru çeviri hizmeti
+                            sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arapça Çeviri Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-language fa-2x mb-3" style="color: #ffc107;"></i>
+                        <h5 class="card-title">Arapça Çeviri</h5>
+                        <p class="card-text">Türkçe'den Arapça'ya ve Arapça'dan Türkçe'ye çeviri hizmeti sağlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Katalog Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-book fa-2x mb-3" style="color: #fd7e14;"></i>
+                        <h5 class="card-title">Katalog</h5>
+                        <p class="card-text">İşletmenizi en iyi şekilde tanıtan profesyonel katalog tasarımları
+                            yapıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seslendirme Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-volume-up fa-2x mb-3" style="color: #007bff;"></i>
+                        <h5 class="card-title">Seslendİrme</h5>
+                        <p class="card-text">Profesyonel seslendirme hizmetiyle projelerinizi sesli hale getiriyoruz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editörlük Kartı -->
+            <div class="col-md-4 mb-4">
+                <div class="card work-card">
+                    <div class="card-body">
+                        <i class="fas fa-pen fa-2x mb-3" style="color: #6610f2;"></i>
+                        <h5 class="card-title">Edİtörlük</h5>
+                        <p class="card-text">Metin düzenleme ve içerik üretimi ile projelerinize katkı sağlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Featured Slider -->
+    <h4 class="font-weight-bold spanborder mt-4 mb-3 section-title"><span>Şİrket Felsefemİz</span></h4>
+    {% include services.html %}
+
+
+
+
+
+    {% endif %} <!--endif page url is / -->
+
+    <script>
+        // Sayacları ayarlayan fonksiyon
+        function animateCounter(id, start, end, duration) {
+            let counter = document.getElementById(id);
+            let current = start;
+            let increment = (end - start) / duration;
+
+            let interval = setInterval(function () {
+                if (current < end) {
+                    current += increment;
+                    counter.innerText = Math.ceil(current); // Tam sayıya yuvarlar
+                } else {
+                    clearInterval(interval);
+                    counter.innerText = end; // Son değeri kesin olarak ayarlar
+                }
+            }, 1); // Her milisaniyede bir güncelleme
+        }
+
+        // Sayacları başlat
+        document.addEventListener("DOMContentLoaded", function () {
+            animateCounter("customer-counter", 0, 13, 500); // Müşteri sayısı 1500'e ulaşacak
+            animateCounter("years-counter", 0, 6, 500); // Müşteri sayısı 1500'e ulaşacak
+            animateCounter("project-counter", 0, 78, 500); // Proje sayısı 500'e ulaşacak
+            animateCounter("team-counter", 0, 11, 1000); // Ekip sayısı 50'ye ulaşacak
+        });
+        // Sayfa kaydırıldığında animasyonu başlatma
+        window.addEventListener("scroll", function () {
+            let cards = document.querySelectorAll('.work-card');
+            let windowHeight = window.innerHeight;
+
+            cards.forEach(function (card) {
+                let cardTop = card.getBoundingClientRect().top;
+                if (cardTop < windowHeight - 100) {
+                    card.classList.add('visible');
+                }
+            });
+        });
+        
+
+
+    </script>
+<style>
+ 
+
+</style>
+</div>
